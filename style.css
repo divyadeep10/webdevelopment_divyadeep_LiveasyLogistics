@@ -198,3 +198,67 @@ header {
 .googlelanguages a:hover{
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .navbar {
+        flex-direction: flex-start;
+        padding: 0px;
+    }
+
+    .bar_gmail,
+    .bar_image,
+    .bar_grid,
+    .bar_signin {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .bar_gmail,
+    .bar_image {
+        font-size: 14px;
+        
+    }
+
+    .bar_grid {
+        padding-bottom: 16px;
+        margin-top: 10px;
+    }
+
+    .material-symbols-outlined {
+        padding: 0;
+        margin-top: 5px;
+    }
+
+    .bar_signin {
+        margin: 10px 0;
+    }
+
+    .google_search {
+        margin-top: 20px;
+    }
+
+    .googlesearchbar {
+        width: 90%;
+        
+    }
+
+    #search_icon,
+    #mic_icon,
+    #camera_icon {
+        padding: 8px;
+    }
+
+    #button1,
+    #button2 {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .googlelanguages {
+        margin-top: 10px;
+    }
+}
