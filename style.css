@@ -262,6 +262,7 @@ footer {
 .lowerfooter-right a {
     text-decoration: none;
     color: #202124;
+    padding-right: 10px;
 }
 
 .lowerfooter-left a:hover,
@@ -271,6 +272,7 @@ footer {
 
 #clear_searchicon{
     margin-right: 10px;
+    cursor: pointer;
 
 }
 @media only screen and (max-width: 768px) {
