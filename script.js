@@ -1,65 +1,76 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const searchIcon = document.getElementById('search_icon');
-    const searchBar = document.getElementById('googlesearchbar_input');
-    const searchButton = document.getElementById('button1');
-    const gmailBar = document.querySelector('.bar_gmail');
-    const imageBar = document.querySelector('.bar_image');
-    const gridBar = document.querySelector('.bar_grid');
-    const signInButton = document.querySelector('.signinbutton');
-   
+    const searchicon = document.getElementById('search_icon');
+    const searchbar = document.getElementById('googlesearchbar_input');
+    const searchbutton = document.getElementById('button1');
+    const gmailbar = document.querySelector('.bar_gmail');
+    const imagebar = document.querySelector('.bar_image');
+    const gridbar = document.querySelector('.bar_grid');
+    const signInbutton = document.querySelector('.signinbutton');
+    const clearsearchbar = document.getElementById('clear_searchicon');
 
 
-    searchIcon.addEventListener('click', toggleSearchBar);
-    searchButton.addEventListener('click', handleSearch);
-    gmailBar.addEventListener('click', handleGmailClick);
-    imageBar.addEventListener('click', handleImageClick);
-    gridBar.addEventListener('click', handleGridClick);
-    signInButton.addEventListener('click', handleSignIn);
-    
+    searchicon.addEventListener('click', togglesearchbar);
+    searchbutton.addEventListener('click', handlesearch);
+    gmailbar.addEventListener('click', handlegmailclick);
+    imagebar.addEventListener('click', handleimageclick);
+    gridbar.addEventListener('click', handlegridclick);
+    signInbutton.addEventListener('click', handlesignin);
+    clearsearchbar.addEventListener('click', clearbar);
 
-    searchBar.addEventListener('keyup', function (event) {
+    clearsearchbar.style.display='none';
+
+    searchbar.addEventListener('input', function () {
+        clearsearchbar.style.display = searchbar.value.trim() !== '' ? 'block' : 'none';
+    });
+
+    clearsearchbar.addEventListener('click', clearbar);
+
+    function clearbar(){
+        searchbar.value ='';
+        clearsearchbar.style.display='none'; 
+    }
+
+
+    searchbar.addEventListener('keyup', function (event) {
         if (event.key === 'Enter') {
             handleSearch();
         }
         
     });
 
-    function toggleSearchBar() {
-        searchBar.classList.toggle('active');
-        searchBar.focus();
-        updateClearIconVisibility();
+    function togglesearchbar() {
+        searchbar.classList.toggle('active');
+        searchbar.focus();
+       
     }
 
-    function handleSearch() {
-        const searchTerm = searchBar.value.trim();
-        if (searchTerm !== '') {
-            alert('Searching for: ' + searchTerm);
+    function handlesearch() {
+        const searchterm = searchbar.value.trim();
+        if (searchterm !== '') {
+            alert('Searching for: ' + searchterm);
         } else {
             alert('Please enter a search term.');
         }
     }
 
-    function clearSearch() {
-        searchBar.value = '';
-        updateClearIconVisibility();
-    }
 
-    function handleGmailClick() {
+
+    function handlegmailclick() {
         alert("Gmail clicked!");
         
     }
 
-    function handleImageClick() {
+    function handleimageclick() {
         alert("Images clicked!");
         
     }
 
-    function handleGridClick() {
+    function handlegridclick() {
         alert("Grid clicked!");
         
     }
 
-    function handleSignIn() {
+    function handlesignin() {
         alert("Sign in clicked!");
         // window.location.href = "https://www.google.com";
     }
